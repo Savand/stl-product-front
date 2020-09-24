@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {LikeEventArgs} from "./like/like.component";
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'stl-product-front';
+
+  switchSelected(args: LikeEventArgs) {
+    console.log("Like changed: " + args)
+  }
+
+
 }
+
+
+
+

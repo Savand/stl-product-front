@@ -1,0 +1,12 @@
+.selected{
+  color: #cccccc;
+}
+
+.unSelected{
+  color: deeppink;
+}
+
+i-bs {
+  cursor: pointer;
+}
+
