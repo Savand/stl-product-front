@@ -1,0 +1,11 @@
+form {
+  border:1px solid #cccccc;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px
+}
+
+.form-control.ng-invalid.ng-dirty{
+  border: 1px solid deeppink;
+}
+

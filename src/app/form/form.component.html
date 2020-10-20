@@ -1,0 +1,25 @@
+<form ngForm #f="ngForm">
+
+  <div class="form-group">
+    <label for="courseName">Course Name</label>
+    <input required minlength="3" maxlength="15" type="text" ngModel #courseNameModel="ngModel" name="courseName"
+           id="courseName"
+           class="form-control">
+
+    <div class="alert alert-danger" *ngIf="courseNameModel.dirty && courseNameModel.control.errors?.required">
+      The field could not be empty
+    </div>
+    <div class="alert alert-danger" *ngIf="courseNameModel.dirty && courseNameModel.control.errors?.minlength">
+      The field should have minimum {{ courseNameModel.control.errors.minlength.requiredLength }} characters
+    </div>
+
+  </div>
+  <div class="form-group">
+    <select required ngModel name="category" id="category" class="form-control">
+      <option value=""></option>
+      <option *ngFor="let category of categoryList" [ngValue]="category"> {{ category.name }}</option>
+    </select>
+  </div>
+
+  <button class="btn btn-primary" [class.disabled]="!f.valid">Submit</button>
+</form>

@@ -1,33 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+
+
+const PROODUCT_BASE_URL = 'http://localhost:8080/api/products';
+
+interface ProductItem {
+  name: string;
+  description: string;
+  price: number;
+  picturePath: string;
+}
+
+interface ProductRestResponse {
+  page: Object;
+  _embedded: {
+    products: ProductItem[];
+  }
+}
 
 @Component({
-  selector: 'app-product',
+  selector: 'product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
 
-  private _name: String;
-  private _description: String;
-  private _picturePath: String;
-  private _price: Number;
+  private _products: ProductItem[];
 
-  ngOnInit(): void {}
+  constructor(http : HttpClient) {
+    http.get(PROODUCT_BASE_URL)
+      .subscribe(response  => {
+        // console.log(response);
+        this._products = (response as ProductRestResponse)._embedded.products;
+      });
 
-
-  get name(): String {
-    return this._name;
   }
 
-  get description(): String {
-    return this._description;
-  }
 
-  get picturePath(): String {
-    return this._picturePath;
-  }
-
-  get price(): Number {
-    return this._price;
+  get products(): ProductItem[] {
+    return this._products;
   }
 }

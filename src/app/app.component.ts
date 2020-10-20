@@ -10,9 +10,6 @@ import * as $ from "jquery";
 export class AppComponent {
   title = 'stl-product-front';
 
-  switchSelected(args: LikeEventArgs) {
-    console.log("Like changed: " + args)
-  }
 
 
 }

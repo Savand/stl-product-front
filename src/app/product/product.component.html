@@ -1,3 +1,13 @@
-<p>product works!</p>
-<h2>{{ "Name Str: " + name }}</h2>
-<!--{{ price }}-->
+<div class="card-deck">
+  <div  class="card" style="width: 18rem;" *ngFor="let product of products">
+
+    <product-item p-name="{{ product.name }}"
+                  p-description="{{ product.description }}"
+                  p-price = "{{ product.price }}"
+                  p-path = "{{ product.picturePath }}"
+    ></product-item>
+
+
+
+  </div>
+</div>
