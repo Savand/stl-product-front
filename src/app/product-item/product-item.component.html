@@ -6,10 +6,28 @@
 <!--</div>-->
 
 <div>
-  <img class="card-img-top" src="{{ path }}" alt="Card image cap">
+  <div>
+  <img class="card-img-top" src="{{ path }}" alt="Card image cap"></div>
+
   <div class="card-body">
-    <h5 class="card-title">{{ name }}</h5>
+    <h4 class="card-title">
+      <strong>
+        {{ name }}
+      </strong>
+
+    </h4>
     <p class="card-text">{{ description }}</p>
-    <a href="#" class="btn btn-primary">Buy</a>
+    <div class="card-footer px-1">
+      <span class="float-left font-weight-bold mr-5">
+        <strong>{{ price }} грн</strong>
+      </span>
+      <a class="mr-3" data-toggle="tooltip" data-placement="top" title="Quick Look">
+        <mdb-icon far icon="eye" class="grey-text"></mdb-icon>
+      </a>
+      <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
+        <i class="fas fa-shopping-cart grey-text"></i>
+      </a>
+
+    </div>
   </div>
 </div>

@@ -15,6 +15,10 @@ import { InputFormattingDirective } from './input-formatting.directive';
 import { PasswordChangeComponent } from './password-change/password-change.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ProductItemComponent } from './product-item/product-item.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { CarouselComponent } from './carousel/carousel.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MainBodyComponent } from './main-body/main-body.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { ProductItemComponent } from './product-item/product-item.component';
     FormComponent,
     InputFormattingDirective,
     PasswordChangeComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    CarouselComponent,
+    NavbarComponent,
+    MainBodyComponent
   ],
     imports: [
         BrowserModule,
@@ -36,7 +43,8 @@ import { ProductItemComponent } from './product-item/product-item.component';
         NgxBootstrapIconsModule.pick(allIcons),
         FormsModule,
         ReactiveFormsModule,
-      HttpClientModule
+      HttpClientModule,
+      MDBBootstrapModule.forRoot()
     ],
   providers: [],
   bootstrap: [AppComponent]
